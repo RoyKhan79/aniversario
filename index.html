@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Courier New", Courier, monospace; /* Fuente de máquina de escribir */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,57 +28,43 @@
         .content {
             position: relative;
             z-index: 2;
-            text-align: left;
+            text-align: justify; /* Texto justificado */
             color: white;
             padding: 20px;
             max-width: 80%;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            font-size: 1em; /* Aumento el tamaño de la fuente */
-            white-space: normal; /* Permitir el ajuste automático */
+            font-size: 0.9em; /* Fuente ligeramente más pequeña */
+            white-space: normal;
             overflow: hidden;
             width: 100%;
         }
         h1 {
-            font-size: 1.8em; /* Aumento el tamaño del título */
+            font-size: 1.8em;
             margin-bottom: 20px;
             text-align: center;
         }
         p {
-            font-size: 1em; /* Ajusto el tamaño del párrafo */
+            font-size: 1em;
             line-height: 1.6;
             margin-bottom: 20px;
             display: inline-block;
-            white-space: normal; /* Permitir el ajuste automático */
-            animation: typing 5s steps(50) 1s forwards, blinkCaret 0.75s step-end infinite;
-            width: 100%;
+            white-space: normal;
             overflow: hidden;
-        }
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-        @keyframes blinkCaret {
-            50% {
-                border-color: transparent;
-            }
+            width: 100%;
         }
         /* Asegura que el texto se vea bien en pantallas pequeñas */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.5em; /* Ajusto el título */
+                font-size: 1.5em;
             }
             p {
-                font-size: 1.1em; /* Aumento el tamaño del párrafo */
+                font-size: 0.9em; /* Reducido un poco más */
             }
             .content {
-                padding: 15px; /* Ajusto el padding */
-                font-size: 1.1em; /* Aumento el tamaño de la fuente */
-                max-width: 90%; /* Aumento el max-width */
+                padding: 15px;
+                font-size: 1em;
+                max-width: 90%;
             }
         }
     </style>
@@ -87,7 +73,7 @@
     <div class="overlay"></div>
     <div class="content">
         <h1>FELIZ ANIVERSARIO XIPIRONA! FELIZ VIDA!</h1>
-        <p>Mi amor,<br><br>
+        <p id="texto">Mi amor,<br><br>
         Hoy, en nuestro 11º aniversario de boda, quiero detenerme un instante en este camino que hemos recorrido juntos y mirar hacia atrás, hacia todos esos momentos que nos han traído hasta aquí. Es imposible no emocionarme al recordar el día en que nos conocimos, hace ya 15 años, en aquel Pans and Company donde el destino decidió cruzar nuestras vidas. Desde entonces, cada día ha sido una prueba de que el amor verdadero no solo existe, sino que se construye, se fortalece y se alimenta con cada risa, con cada abrazo y también con cada obstáculo superado juntos.<br><br>
 
         Nuestros comienzos no fueron fáciles, lo sabemos bien. Pasamos meses en casas separadas, soñando con el momento en que por fin podríamos despertar cada día el uno al lado del otro. Y cuando finalmente dimos ese paso, la vida nos regaló un pedacito de felicidad que nos acompañó durante 12 maravillosos años: nuestro querido Thor. Él fue testigo silencioso de nuestra historia, de nuestras risas, de nuestras horas y horas de confidencias y de todos esos pequeños instantes que convirtieron una casa en un hogar.<br><br>
@@ -98,9 +84,9 @@
 
         Hoy, después de 11 años de matrimonio, te miro y sé que volvería a elegirte una y mil veces. Porque a tu lado he aprendido que el amor no es solo sentir mariposas en el estómago, sino construir juntos cada día, con respeto, con sinceridad y con esa complicidad que solo tú y yo entendemos. Ojalá la vida nos regale muchos años más juntos, para seguir escribiendo nuestra historia con la misma fuerza y el mismo amor que nos unió desde el principio.<br><br>
 
-        Quiero que también sepas el significado del regalo que hoy te entrego: esta pulsera de acero con el lauburu simboliza tu país de origen, ese lugar donde el amor de mi vida comenzó a recorrer sus pasos. Es un símbolo de nuestros orígenes y de todo lo que somos. Y en breve, amor mío, espero que podamos los cuatro recorrer juntos esas calles, compartiendo esa historia y sumando nuevos recuerdos.<br><br>
+        Quiero que también sepas el significado del regalo que hoy te entrego: esta pulsera de acero con el lauburu simboliza tu origen, ese lugar donde el amor de mi vida comenzó a recorrer sus pasos.  Y en breve, querida Yemima, espero que podamos los cuatro recorrer juntos esas calles, compartiendo esa historia y sumando nuevos recuerdos a nuestra mochila.<br><br>
 
-        Gracias por ser mi amor, mi compañera y el hogar donde siempre quiero volver. Te amo con toda mi alma.<br><br>
+        Gracias por ser mi amor, mi compañera y espero que esta "sorpresa" te haya gustado, quería también simbolizar todo lo que poco a poco voy aprendiendo y en lo que me quiero convertir en un fururo no muy lejano :)  Te amo con toda mi alma.<br><br>
 
         ¡¡¡Feliz aniversario!!!.<br><br>
 
@@ -111,5 +97,26 @@
     <audio autoplay loop controls>
         <source src="https://voca.ro/1jEmGO0ECjqI" type="audio/mpeg">
     </audio>
+
+    <script>
+        // Función para escribir palabra por palabra con velocidad ajustada
+        const textoElement = document.getElementById("texto");
+        const texto = textoElement.innerHTML;
+        const palabras = texto.split(" ");
+        let index = 0;
+
+        textoElement.innerHTML = ""; // Limpiar el contenido inicial
+
+        const escribirPalabra = () => {
+            if (index < palabras.length) {
+                textoElement.innerHTML += palabras[index] + " "; // Añadir palabra
+                index++;
+                setTimeout(escribirPalabra, 300); // Esperar 300 ms entre palabras
+            }
+        };
+
+        // Comenzar la escritura
+        escribirPalabra();
+    </script>
 </body>
 </html>

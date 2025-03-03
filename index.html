@@ -39,17 +39,18 @@
             white-space: normal;
             overflow: hidden;
             width: 100%;
-            height: 100%; /* Ocupa toda la altura disponible */
+            height: auto; /* Permitir que el contenido crezca según el texto */
             box-sizing: border-box;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrado vertical */
+            justify-content: flex-start; /* Centrado vertical, pero permitiendo el flujo */
         }
         h1 {
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
+            word-wrap: break-word; /* Asegura que el texto largo se ajuste */
         }
         p {
             font-size: 1em;
@@ -64,6 +65,7 @@
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
+                margin-bottom: 10px; /* Reducir el margen para pantallas pequeñas */
             }
             p {
                 font-size: 0.9em;

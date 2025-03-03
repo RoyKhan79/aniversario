@@ -14,6 +14,7 @@
             align-items: center;
             height: 100vh;
             background: url('https://i.postimg.cc/59TcMCsD/Screenshot-1.jpg') no-repeat center center/cover;
+            overflow: hidden;
         }
         .overlay {
             position: absolute;
@@ -29,17 +30,46 @@
             z-index: 2;
             text-align: center;
             color: white;
-            padding: 20px;
-            max-width: 600px;
+            padding: 40px;
+            max-width: 80%;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
+            transform: translateY(-100%);
+            animation: slideDown 2s ease-out forwards;
+            overflow-y: auto;
+            width: 100%;
+            max-height: none;  /* Se eliminó la restricción de altura */
         }
         h1 {
-            font-size: 24px;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        /* Asegura que el texto se vea bien en pantallas pequeñas */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .content {
+                padding: 20px;
+                max-width: 90%;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -52,26 +82,26 @@
 
         Hoy, en nuestro 11º aniversario de boda, quiero detenerme un instante en este camino que hemos recorrido juntos y mirar hacia atrás, hacia todos esos momentos que nos han traído hasta aquí. Es imposible no emocionarme al recordar el día en que nos conocimos, hace ya 15 años, en aquel Pans and Company donde el destino decidió cruzar nuestras vidas. Desde entonces, cada día ha sido una prueba de que el amor verdadero no solo existe, sino que se construye, se fortalece y se alimenta con cada risa, con cada abrazo y también con cada obstáculo superado juntos.<br><br>
 
-	Nuestros comienzos no fueron fáciles, lo sabemos bien. Pasamos meses en casas separadas, soñando con el momento en que por fin podríamos despertar cada día el uno al lado del otro. Y cuando finalmente dimos ese paso, la vida nos regaló un pedacito de felicidad que nos acompañó durante 12 maravillosos años: nuestro querido Thor. Él fue testigo silencioso de nuestra historia, de nuestras risas, de nuestras horas y horas de confidencias y de todos esos pequeños instantes que convirtieron una casa en un hogar.<br><br>
+        Nuestros comienzos no fueron fáciles, lo sabemos bien. Pasamos meses en casas separadas, soñando con el momento en que por fin podríamos despertar cada día el uno al lado del otro. Y cuando finalmente dimos ese paso, la vida nos regaló un pedacito de felicidad que nos acompañó durante 12 maravillosos años: nuestro querido Thor. Él fue testigo silencioso de nuestra historia, de nuestras risas, de nuestras horas y horas de confidencias y de todos esos pequeños instantes que convirtieron una casa en un hogar.<br><br>
 
-	Juntos hemos superado dificultades, porque la vida nunca es un camino llano, pero lo importante es que cada tropiezo nos ha enseñado a sostenernos más fuerte de la mano. Hemos vivido momentos mágicos, pero ninguno comparable a aquel 8 de marzo de 2014, cuando nos juramos amor eterno. Y un año después, la felicidad nos inundó de una manera que jamás habríamos imaginado con la llegada de nuestra pequeña Irene. Ella, con su luz, su alegría y su amor incondicional, nos ha enseñado que la mayor fortuna de nuestras vidas es la familia que hemos construido.<br><br>
+        Juntos hemos superado dificultades, porque la vida nunca es un camino llano, pero lo importante es que cada tropiezo nos ha enseñado a sostenernos más fuerte de la mano. Hemos vivido momentos mágicos, pero ninguno comparable a aquel 8 de marzo de 2014, cuando nos juramos amor eterno. Y un año después, la felicidad nos inundó de una manera que jamás habríamos imaginado con la llegada de nuestra pequeña Irene. Ella, con su luz, su alegría y su amor incondicional, nos ha enseñado que la mayor fortuna de nuestras vidas es la familia que hemos construido.<br><br>
 
-	Hemos cambiado de casa varias veces, buscando siempre el lugar donde escribir nuestra historia, y hoy por fin hemos encontrado ese espacio al que llamamos hogar. Aunque despedimos con lágrimas a nuestro querido Thor, la vida nos trajo después a Bolti, quien ha llenado de vida nuestro hogar y ha seguido esa cadena de amor que nos une.<br><br>
+        Hemos cambiado de casa varias veces, buscando siempre el lugar donde escribir nuestra historia, y hoy por fin hemos encontrado ese espacio al que llamamos hogar. Aunque despedimos con lágrimas a nuestro querido Thor, la vida nos trajo después a Bolti, quien ha llenado de vida nuestro hogar y ha seguido esa cadena de amor que nos une.<br><br>
 
-	Hoy, después de 11 años de matrimonio, te miro y sé que volvería a elegirte una y mil veces. Porque a tu lado he aprendido que el amor no es solo sentir mariposas en el estómago, sino construir juntos cada día, con respeto, con sinceridad y con esa complicidad que solo tú y yo entendemos. Ojalá la vida nos regale muchos años más juntos, para seguir escribiendo nuestra historia con la misma fuerza y el mismo amor que nos unió desde el principio.<br><br>
+        Hoy, después de 11 años de matrimonio, te miro y sé que volvería a elegirte una y mil veces. Porque a tu lado he aprendido que el amor no es solo sentir mariposas en el estómago, sino construir juntos cada día, con respeto, con sinceridad y con esa complicidad que solo tú y yo entendemos. Ojalá la vida nos regale muchos años más juntos, para seguir escribiendo nuestra historia con la misma fuerza y el mismo amor que nos unió desde el principio.<br><br>
 
-	Quiero que también sepas el significado del regalo que hoy te entrego: esta pulsera de acero con el lauburu simboliza tu país de origen, ese lugar donde el amor de mi vida comenzó a recorrer sus pasos. Es un símbolo de nuestros orígenes y de todo lo que somos. Y en breve, amor mío, espero que podamos los cuatro recorrer juntos esas calles, compartiendo esa historia y sumando nuevos recuerdos.<br><br>
+        Quiero que también sepas el significado del regalo que hoy te entrego: esta pulsera de acero con el lauburu simboliza tu país de origen, ese lugar donde el amor de mi vida comenzó a recorrer sus pasos. Es un símbolo de nuestros orígenes y de todo lo que somos. Y en breve, amor mío, espero que podamos los cuatro recorrer juntos esas calles, compartiendo esa historia y sumando nuevos recuerdos.<br><br>
 
-	Gracias por ser mi amor, mi compañera y el hogar donde siempre quiero volver. Te amo con toda mi alma.<br><br>
+        Gracias por ser mi amor, mi compañera y el hogar donde siempre quiero volver. Te amo con toda mi alma.<br><br>
 
-	¡¡¡Feliz aniversario!!!.<br><br>
+        ¡¡¡Feliz aniversario!!!.<br><br>
 
-Tu Xipiron.
+        Tu Xipiron.
         </p>
     </div>
     
-    <audio autoplay loop>
+    <audio autoplay loop controls>
         <source src="https://voca.ro/1jEmGO0ECjqI" type="audio/mpeg">
-            </audio>
+    </audio>
 </body>
 </html>

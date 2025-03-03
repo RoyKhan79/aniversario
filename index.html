@@ -94,28 +94,13 @@
             }
         }
 
-        /* Animación de escritura (más rápida) */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-        /* Parpadeo del cursor */
-        @keyframes blinkCaret {
-            50% {
-                border-color: transparent;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="content">
         <h1>FELIZ ANIVERSARIO XIPIRONA! FELIZ VIDA!</h1>
-        <p id="texto">Mi amor,<br><br>
+        <p>Mi amor,<br><br>
         Hoy, en nuestro 11º aniversario de boda, quiero detenerme un instante en este camino que hemos recorrido juntos y mirar hacia atrás, hacia todos esos momentos que nos han traído hasta aquí. Es imposible no emocionarme al recordar el día en que nos conocimos, hace ya 15 años, en aquel Pans and Company donde el destino decidió cruzar nuestras vidas. Desde entonces, cada día ha sido una prueba de que el amor verdadero no solo existe, sino que se construye, se fortalece y se alimenta con cada risa, con cada abrazo y también con cada obstáculo superado juntos.<br><br>
 
         Nuestros comienzos no fueron fáciles, lo sabemos bien. Pasamos meses en casas separadas, soñando con el momento en que por fin podríamos despertar cada día el uno al lado del otro. Y cuando finalmente dimos ese paso, la vida nos regaló un pedacito de felicidad que nos acompañó durante 12 maravillosos años: nuestro querido Thor. Él fue testigo silencioso de nuestra historia, de nuestras risas, de nuestras horas y horas de confidencias y de todos esos pequeños instantes que convirtieron una casa en un hogar.<br><br>
@@ -140,25 +125,5 @@
         <source src="https://voca.ro/1jEmGO0ECjqI" type="audio/mpeg">
     </audio>
 
-    <script>
-        // Función para escribir palabra por palabra con velocidad ajustada
-        const textoElement = document.getElementById("texto");
-        const texto = textoElement.innerHTML;
-        const palabras = texto.split(" ");
-        let index = 0;
-
-        textoElement.innerHTML = ""; // Limpiar el contenido inicial
-
-        const escribirPalabra = () => {
-            if (index < palabras.length) {
-                textoElement.innerHTML += palabras[index] + " "; // Añadir palabra
-                index++;
-                setTimeout(escribirPalabra, 100); // Ajustado para hacer la escritura mucho más rápida
-            }
-        };
-
-        // Comenzar la escritura
-        escribirPalabra();
-    </script>
 </body>
 </html>

@@ -44,7 +44,7 @@
             flex-direction: column;
             justify-content: flex-start; /* Centrado vertical */
             padding-bottom: 10px; /* Espacio extra para evitar que el último texto quede oculto */
-            animation: scrollText 20s linear infinite; /* Animación de desplazamiento */
+            animation: scrollText 30s linear infinite; /* Animación de desplazamiento más lenta */
         }
         h1 {
             font-size: 2em;
@@ -152,7 +152,7 @@
             if (index < palabras.length) {
                 textoElement.innerHTML += palabras[index] + " "; // Añadir palabra
                 index++;
-                setTimeout(escribirPalabra, 300); // Esperar 300 ms entre palabras
+                setTimeout(escribirPalabra, 800); // Ajustado para que coincida con el desplazamiento
             }
         };
 

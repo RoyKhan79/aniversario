@@ -37,15 +37,17 @@
             border-radius: 10px;
             font-size: 1.2em;
             white-space: normal;
-            overflow-y: auto; /* Barra de desplazamiento vertical */
+            overflow: hidden; /* El contenido no se desborda */
             width: 100%;
             height: 100%; /* Asegura que el contenido ocupe el espacio completo */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Centrado vertical */
-            overflow-x: hidden; /* Evita el desplazamiento horizontal */
             padding-bottom: 10px; /* Espacio extra para evitar que el último texto quede oculto */
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         h1 {
             font-size: 2em;
@@ -82,6 +84,21 @@
         /* Ocultar el icono de música */
         audio {
             display: none;
+        }
+
+        /* Animación de desplazamiento hacia arriba */
+        @keyframes scrollText {
+            0% {
+                transform: translateY(100%); /* Comienza desde abajo */
+            }
+            100% {
+                transform: translateY(-100%); /* Desplaza el texto completamente hacia arriba */
+            }
+        }
+
+        /* Aplicando la animación */
+        .content p {
+            animation: typing 5s steps(50) 1s forwards, blinkCaret 0.75s step-end infinite, scrollText 20s linear infinite;
         }
     </style>
 </head>

@@ -15,7 +15,7 @@
             height: 100vh; /* Ocupa toda la altura de la pantalla */
             background: url('https://i.postimg.cc/59TcMCsD/Screenshot-1.jpg') no-repeat center center/cover;
             background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
-            overflow: hidden; /* Elimina barras de desplazamiento */
+            overflow: hidden; /* Elimina barras de desplazamiento innecesarias */
         }
         .overlay {
             position: absolute;
@@ -37,7 +37,7 @@
             border-radius: 10px;
             font-size: 1.2em;
             white-space: normal;
-            overflow-y: auto; /* Permite desplazamiento si el contenido excede la pantalla */
+            overflow-y: scroll; /* Barra de desplazamiento vertical */
             width: 100%;
             height: 100%; /* Asegura que el contenido ocupe el espacio completo */
             box-sizing: border-box;

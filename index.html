@@ -27,7 +27,7 @@
             backdrop-filter: blur(5px);
         }
         .content {
-            position: relative;
+            position: absolute;
             z-index: 2;
             text-align: justify; /* Texto justificado */
             color: white;
@@ -39,15 +39,12 @@
             white-space: normal;
             overflow: hidden; /* El contenido no se desborda */
             width: 100%;
-            height: 100%; /* Asegura que el contenido ocupe el espacio completo */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Centrado vertical */
             padding-bottom: 10px; /* Espacio extra para evitar que el último texto quede oculto */
-            position: absolute;
-            top: 0;
-            left: 0;
+            animation: scrollText 20s linear infinite; /* Animación de desplazamiento */
         }
         h1 {
             font-size: 2em;
@@ -96,9 +93,20 @@
             }
         }
 
-        /* Aplicando la animación */
-        .content p {
-            animation: typing 5s steps(50) 1s forwards, blinkCaret 0.75s step-end infinite, scrollText 20s linear infinite;
+        /* Animación de escritura */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        /* Parpadeo del cursor */
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
         }
     </style>
 </head>

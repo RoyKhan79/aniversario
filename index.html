@@ -45,7 +45,7 @@
             flex-direction: column;
             justify-content: flex-start; /* Centrado vertical */
             padding-bottom: 10px; /* Espacio extra para evitar que el último texto quede oculto */
-            animation: scrollText 30s linear infinite; /* Animación de desplazamiento más lenta */
+            animation: scrollText 25s linear infinite; /* Desplazamiento más rápido */
         }
         h1 {
             font-size: 2em;
@@ -94,7 +94,7 @@
             }
         }
 
-        /* Animación de escritura */
+        /* Animación de escritura (más rápida) */
         @keyframes typing {
             from {
                 width: 0;
@@ -153,7 +153,7 @@
             if (index < palabras.length) {
                 textoElement.innerHTML += palabras[index] + " "; // Añadir palabra
                 index++;
-                setTimeout(escribirPalabra, 800); // Ajustado para que coincida con el desplazamiento
+                setTimeout(escribirPalabra, 500); // Ajustado para hacer la escritura más rápida
             }
         };
 

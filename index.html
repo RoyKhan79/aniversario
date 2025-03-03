@@ -28,47 +28,57 @@
         .content {
             position: relative;
             z-index: 2;
-            text-align: center;
+            text-align: left;
             color: white;
-            padding: 40px;
+            padding: 20px;
             max-width: 80%;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            transform: translateY(-100%);
-            animation: slideDown 2s ease-out forwards;
-            overflow-y: auto;
+            font-size: 1em; /* Aumento el tamaño de la fuente */
+            white-space: normal; /* Permitir el ajuste automático */
+            overflow: hidden;
             width: 100%;
-            max-height: none;  /* Se eliminó la restricción de altura */
         }
         h1 {
-            font-size: 2em;
+            font-size: 1.8em; /* Aumento el tamaño del título */
             margin-bottom: 20px;
+            text-align: center;
         }
         p {
-            font-size: 1.2em;
-            line-height: 1.8;
+            font-size: 1em; /* Ajusto el tamaño del párrafo */
+            line-height: 1.6;
             margin-bottom: 20px;
+            display: inline-block;
+            white-space: normal; /* Permitir el ajuste automático */
+            animation: typing 5s steps(50) 1s forwards, blinkCaret 0.75s step-end infinite;
+            width: 100%;
+            overflow: hidden;
         }
-        @keyframes slideDown {
+        @keyframes typing {
             from {
-                transform: translateY(-100%);
+                width: 0;
             }
             to {
-                transform: translateY(0);
+                width: 100%;
+            }
+        }
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
             }
         }
         /* Asegura que el texto se vea bien en pantallas pequeñas */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.5em;
+                font-size: 1.5em; /* Ajusto el título */
             }
             p {
-                font-size: 1em;
+                font-size: 1.1em; /* Aumento el tamaño del párrafo */
             }
             .content {
-                padding: 20px;
-                max-width: 90%;
-                font-size: 1em;
+                padding: 15px; /* Ajusto el padding */
+                font-size: 1.1em; /* Aumento el tamaño de la fuente */
+                max-width: 90%; /* Aumento el max-width */
             }
         }
     </style>
@@ -77,9 +87,7 @@
     <div class="overlay"></div>
     <div class="content">
         <h1>FELIZ ANIVERSARIO XIPIRONA! FELIZ VIDA!</h1>
-
         <p>Mi amor,<br><br>
-
         Hoy, en nuestro 11º aniversario de boda, quiero detenerme un instante en este camino que hemos recorrido juntos y mirar hacia atrás, hacia todos esos momentos que nos han traído hasta aquí. Es imposible no emocionarme al recordar el día en que nos conocimos, hace ya 15 años, en aquel Pans and Company donde el destino decidió cruzar nuestras vidas. Desde entonces, cada día ha sido una prueba de que el amor verdadero no solo existe, sino que se construye, se fortalece y se alimenta con cada risa, con cada abrazo y también con cada obstáculo superado juntos.<br><br>
 
         Nuestros comienzos no fueron fáciles, lo sabemos bien. Pasamos meses en casas separadas, soñando con el momento en que por fin podríamos despertar cada día el uno al lado del otro. Y cuando finalmente dimos ese paso, la vida nos regaló un pedacito de felicidad que nos acompañó durante 12 maravillosos años: nuestro querido Thor. Él fue testigo silencioso de nuestra historia, de nuestras risas, de nuestras horas y horas de confidencias y de todos esos pequeños instantes que convirtieron una casa en un hogar.<br><br>
